@@ -1,0 +1,20 @@
+{
+    "user_list" : [
+        {
+            "username" : "client1",
+            "password" : "client1"
+        },
+        {
+            "username" : "client2",
+            "password" : "client2"
+        },
+        {
+            "username" : "client3",
+            "password" : "client3"
+        },
+        {
+            "username" : "client4",
+            "password" : "client4"
+        }
+    ]
+}
