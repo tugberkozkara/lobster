@@ -1,0 +1,52 @@
+{
+    "song_list" : [
+        {
+            "name" : "The Age Of The Understatement",
+            "artist" : "The Last Shadow Puppets"
+        },
+        {
+            "name" : "Standing Next To Me",
+            "artist" : "The Last Shadow Puppets"
+        },
+        {
+            "name" : "Calm Like You",
+            "artist" : "The Last Shadow Puppets"
+        },
+        {
+            "name" : "Separate And Ever Deadly",
+            "artist" : "The Last Shadow Puppets"
+        },
+        {
+            "name" : "The Chamber",
+            "artist" : "The Last Shadow Puppets"
+        },
+        {
+            "name" : "Only The Truth",
+            "artist" : "The Last Shadow Puppets"
+        },
+        {
+            "name" : "My Mistakes Were Made For You",
+            "artist" : "The Last Shadow Puppets"
+        },
+        {
+            "name" : "Black Plant",
+            "artist" : "The Last Shadow Puppets"
+        },
+        {
+            "name" : "I Don't Like You Anymore",
+            "artist" : "The Last Shadow Puppets"
+        },
+        {
+            "name" : "In My Room",
+            "artist" : "The Last Shadow Puppets"
+        },
+        {
+            "name" : "Meeting Place",
+            "artist" : "The Last Shadow Puppets"
+        },
+        {
+            "name" : "The Time Has Come Again",
+            "artist" : "The Last Shadow Puppets"
+        }
+    ]
+}
