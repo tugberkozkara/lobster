@@ -18,14 +18,14 @@ def is_song_file_in_server(server_number, song_name):
 
 def is_song_exists(song_name, server_number):
     if is_song_name_in_list(song_name):
-        print(f"Song '{song_name}' found in list. Checking for location...")
+        print(f"[200]   Song '{song_name}' found in list. Checking for location...")
         if is_song_file_in_server(server_number, song_name):
-            print(f"Song '{song_name}' found in server{server_number}.")
+            print(f"[200]   Song '{song_name}' found in server{server_number}.")
             return True
         else:
-            print(f"Song '{song_name}' not found in server{server_number}.")
+            print(f"[404]   Song '{song_name}' not found in server{server_number}.")
     else:
-        print(f"Song '{song_name}' not found in server{server_number}.")
+        print(f"[404]   Song '{song_name}' not found in list.")
     return False
 
 
