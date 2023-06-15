@@ -1,4 +1,3 @@
-import socket
 
 SERVER1_HOST = "127.0.0.1"
 SERVER1_PORT = 5001
@@ -14,21 +13,8 @@ def check_song_existence(song_name, client1, client2):
     return bool.from_bytes(server1_response), bool.from_bytes(server2_response)
 
 
-def download_song(song_name, server_number):
-    if server_number == "1":
-        server_address = SERVER1_HOST
-        server_port = SERVER1_PORT
-    elif server_number == "2":
-        server_address = SERVER2_HOST
-        server_port = SERVER2_PORT
-    else:
-        print("Invalid preferred server selection.")
-        return
-
-    client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    client.connect((server_address, server_port))
+def download_song(song_name, client):
     client.send(str("download "+song_name).encode())
-
     mp3_data = b''
     while True:
         data = client.recv(4096)
@@ -40,4 +26,3 @@ def download_song(song_name, server_number):
         file.write(mp3_data)
 
     print("Downloaded!")
-    client.close()
