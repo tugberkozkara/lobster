@@ -1,6 +1,6 @@
 import socket
 import threading
-from utils import song_utils
+from utils import song_utils, auth_utils
 
 HOST = "127.0.0.1"
 PORT = 5001
@@ -14,8 +14,21 @@ if server_number == "2":
 
 
 def handle_request(client):
-    while True:
+    authenticated = False
+    while not authenticated:
         command = client.recv(4096).decode()
+        username = command.split()[1]
+        password = command.split()[2]
+
+        authenticated = auth_utils.is_authenticated(username, password)
+        if not authenticated:
+            client.send("AuthFail".encode())
+
+    client.send("AuthSuccess".encode())
+    print(f"User '{username}' logged in successfully.")
+
+    while True:
+        command = client.recv(1024).decode()
 
         if command == "get":
             client.send(str(song_utils.get_song_list()).encode())
@@ -33,6 +46,7 @@ def handle_request(client):
             print(f"{song_name}.mp3 sent to {client.getpeername()[0]}:{client.getpeername()[1]}")
 
         elif command == "exit":
+            print(f"User '{username}' logged out.")
             break
 
     client.close()

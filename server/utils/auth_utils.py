@@ -1,7 +1,7 @@
 import json
 
 
-def is_user_valid(username, password):
+def is_authenticated(username, password):
     with open("./users.json", "r") as file:
         user_list = json.load(file)["user_list"]
         for user in user_list:
