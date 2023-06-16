@@ -49,6 +49,13 @@ def download_command(song_name, client1, client2):
         print(f"Song '{song_name}' not found in any server.")
 
 
+def exit_command(client1, client2):
+    client1.send("exit".encode())
+    client2.send("exit".encode())
+    client1.close()
+    client2.close()
+
+
 def is_authenticated(client1, client2):
     authenticated = False
     while not authenticated:
@@ -86,8 +93,7 @@ def handle_commands(client1, client2):
             download_command(song_name, client1, client2)
 
         elif command == "exit":
-            client1.close()
-            client2.close()
+            exit_command(client1, client2)
             break
         else:
             print("Invalid command.")
