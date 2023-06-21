@@ -16,7 +16,7 @@ if server_number == "2":
 def handle_request(client):
     authenticated = False
     while not authenticated:
-        command = client.recv(4096).decode()
+        command = client.recv(1024).decode()
         username = command.split()[1]
         password = command.split()[2]
 
