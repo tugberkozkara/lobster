@@ -1,10 +1,4 @@
 
-SERVER1_HOST = "127.0.0.1"
-SERVER1_PORT = 5001
-SERVER2_HOST = "127.0.0.1"
-SERVER2_PORT = 5002
-
-
 def check_song_existence(song_name, client1, client2):
     client1.send(str("check "+song_name).encode())
     server1_response = client1.recv(4096)
